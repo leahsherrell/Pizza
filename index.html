@@ -4,13 +4,74 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Italiana" rel="stylesheet">
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/scripts.js"></script>
     <title></title>
   </head>
   <body>
     <div class="container">
-      
+      <div class="jumbotron">
+        <h1>Bettina's</h1>
+        <p>pizzeria di famiglia</p>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-md-offset-1">
+          <form id="pie">
+            <div class="form-group">
+              <label for="size">Choose a Size</label>
+              <select class="form-control" id="size">
+                <option value="sm">small $12</option>
+                <option value="md">medium $15</option>
+                <option value="lg">large $18</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-3 col-md-offset-1">
+          <form id="tops">
+            <div class="form-group">
+              <label for="tops">Up to 6 Toppings ($2/each)</label>
+              <div class="checkbox">
+                <label><input type="checkbox" value="sauce">family recipe tomato sauce</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="mozzarella">house made fresh mozzarella</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="anchovies">anchovies</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="basil">fresh basil</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="artichoke">artichoke hearts</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="romas">roma tomato slices</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="olives">greek olives</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="mushrooms">seasonal wild mushrooms</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="sausage">tuscany sausage</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="prosciutto">prosciutto</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="mortadella">mortadella</label>
+              </div>
+            </div>
+          </form>
+        </div><!-- end 2nd col -->
+        <div class="col-md-3 col-md-offset-1">
+          <h4>Total: $<span id="total"></span></h4>
+        </div>
+      </div>
     </div>
   </body>
 </html>
