@@ -1,6 +1,6 @@
 # Pizza
 
-#### Epicodus Solo Project, week 4
+#### Epicodus Solo Project, week 4, 05-12-2017
 
 #### By Leah Sherrell
 
@@ -19,14 +19,14 @@ A simple pizza order-taking app.
 ## Technologies Used
 
 * Javascript
-* Jquery
+* jQuery
 
 ## Specs
 | Behavior: this program should| Inputs Example: when it receives | Output: it should return|
 |------------------|:-------------:|------:|
-|take size order upon click|click "medium"|add appropriate price increase to total|
-|take topping order upon click|click "olives"|add appropriate price increase to total|
-|show full order when click "done"|click "done"|show completed order|
+|take size order|click "medium"|show medium as chosen|
+|take topping order|click "olives"|show olives as checked|
+|show total price when click order|click "order"|show total price|
 
 
 ### License
