@@ -5,3 +5,7 @@ body {
 h1, p {
   text-align: center;
 }
+
+#button {
+  margin: 40px;
+}
