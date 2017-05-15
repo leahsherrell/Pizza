@@ -81,6 +81,11 @@ img.lg {
   display: block;
   opacity: .5;
   margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.icon:hover {
+  opacity: 1;
 }
 
 .radio-button {
@@ -99,4 +104,17 @@ img.lg {
 #topping-price {
   font-size: 18px;
   text-align: center;
+}
+
+.order-head {
+  font-family: 'bodoniflfregular';
+  text-decoration: underline;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+.order {
+  font-size: 18px;
+  letter-spacing: .5px;
+  /*font-family: 'bodoniflfregular';*/
 }
