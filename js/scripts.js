@@ -7,19 +7,6 @@
 //   lg: 18
 // };
 
-// var toppings = {
-//   sauce: 1,
-//   anch: 1,
-//   tomato: 1,
-//   basil: 1,
-//   arti: 1,
-//   olives: 2,
-//   shrooms: 2,
-//   mozza: 2,
-//   sausage: 2,
-//   prosc: 3,
-//   morta: 3
-// };
 
 //Pizza constructor
 function Pizza(size, toppings) {
@@ -56,10 +43,11 @@ Pizza.prototype.addToppings = function() {
 //UI logic
 
 $(function() {
-  $("form#pie").submit(function(event) {
+
+  $("form#pie").change(function(event) {
     event.preventDefault();
 
-    var size = $("select#size").val();
+    var size = $('input[name=size]:checked').val();
     var toppings = [];
     var newPizza = new Pizza(size, toppings);
     $(":checkbox:checked").each(function(i) {
