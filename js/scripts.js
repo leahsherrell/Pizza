@@ -18,28 +18,23 @@ function Pizza(size, toppings) {
 
 //method that adds price of size to total, returns total
 Pizza.prototype.addSize = function() {
-  if (this.size === "sm") {
+  if (this.size === "small") {
     this.total += 12;
-  } else if (this.size === "md") {
+  } else if (this.size === "medium") {
     this.total += 15;
-  } else if (this.size === "lg") {
+  } else if (this.size === "large") {
     this.total += 18;
   }
   return this.total;
 }
 
-// method to push chosen toppings into new pizza object
-Pizza.prototype.pushTopping = function(topping) {
-  this.toppings.push(topping);
-}
-
 //method that adds price of topping chosen to total, returns total
 Pizza.prototype.addToppings = function() {
-  if (this.size === "sm") {
+  if (this.size === "small") {
     this.perTopping = 1;
-  } else if (this.size === "md") {
+  } else if (this.size === "medium") {
     this.perTopping = 2;
-  } else if (this.size === "lg") {
+  } else if (this.size === "large") {
     this.perTopping = 3;
   }
 
@@ -53,20 +48,30 @@ Pizza.prototype.addToppings = function() {
 
 $(function() {
 
-  $("form#pie").change(function(event) {
-    event.preventDefault();
+  var newPizza;
+
+  $("form#pie").change(function() {
 
     var size = $('input[name=size]:checked').val();
     var toppings = [];
-    var newPizza = new Pizza(size, toppings);
+    newPizza = new Pizza(size, toppings);
     $(":checkbox:checked").each(function(i) {
       toppings[i] = $(this).val();
-      newPizza.pushTopping(toppings);
+      newPizza.toppings = toppings;
     });
     newPizza.addSize();
     newPizza.addToppings();
 
     $("#total").text(newPizza.total);
     $("#topping-price").text("$" + newPizza.perTopping + " each");
+  });
+
+  $("form#pie").submit(function(event) {
+    event.preventDefault();
+
+    var output = "<h4>Your order:</h4>" + newPizza.size + " pie with ";
+    output += newPizza.toppings.join(", ");
+
+    $("#complete").html(output);
   });
 });
