@@ -57,8 +57,8 @@ $(function() {
     newPizza = new Pizza(size, toppings);
     $(":checkbox:checked").each(function(i) {
       toppings[i] = $(this).val();
-      newPizza.toppings = toppings;
     });
+    newPizza.toppings = toppings;
     newPizza.addSize();
     newPizza.addToppings();
 
