@@ -1,15 +1,5 @@
 //business logic
 
-//literal notation:
-
-// var pizza = {
-//   sizes: [sm, med, lg],
-//   toppings: [{topping: "family recipe spicy tomato sauce", price: 1}, {topping: "house-made fresh mozzarella", price: 2}, {topping: "anchovies", price: 1}, {topping: "roma tomato slices", price: 1}, {topping: "basil leaves", price: 1}, {topping: "greek olives"}, "artichoke hearts", "wild mushrooms", "tuscan sausage", "prosciutto", "mortadella"];
-  // prototype
-  // prototype
-
-// }
-
 // size and toppings objects key: value pairs may be easily discerned and edited
 // var size = {
 //   sm: 12,
@@ -39,11 +29,6 @@ function Pizza(size, toppings) {
 }
 
 //method that adds price of size to total, returns total
-
-// Pizza.prototype.addSize = function(inputSize) {
-//   forEach (inputSize === this.size)
-// }
-
 Pizza.prototype.addSize = function() {
   if (this.size === "sm") {
     this.total += 12;
@@ -55,14 +40,35 @@ Pizza.prototype.addSize = function() {
   return this.total;
 }
 
-//method that adds price of topping chosen to total, returns total
-Pizza.prototype.pushToppings = function(topping) {
+// method to push chosen toppings into new pizza object
+Pizza.prototype.pushTopping = function(topping) {
   this.toppings.push(topping);
 }
 
+//method that adds price of topping chosen to total, returns total
 Pizza.prototype.addToppings = function() {
   for (i = 0; i < this.toppings.length; i++) {
   this.total += 2;
   }
   return this.total;
 }
+
+//UI logic
+
+$(function() {
+  $("form#pie").submit(function(event) {
+    event.preventDefault();
+
+    var size = $("select#size").val();
+    var toppings = [];
+    var newPizza = new Pizza(size, toppings);
+    $(":checkbox:checked").each(function(i) {
+      toppings[i] = $(this).val();
+      newPizza.pushTopping(toppings);
+    });
+    newPizza.addSize();
+    newPizza.addToppings();
+
+    $("#total").text(newPizza.total);
+  });
+});
