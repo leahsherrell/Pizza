@@ -69,8 +69,13 @@ $(function() {
   $("form#pie").submit(function(event) {
     event.preventDefault();
 
-    var output = "<h4>Your order:</h4>" + newPizza.size + " pie with ";
-    output += newPizza.toppings.join(", ");
+    var output = "";
+
+    if(newPizza.toppings.length < 1) {
+      output = "<p>Please add topping(s)</p>";
+    } else if (typeof newPizza.size != 'undefined') {
+      output = "<h3 class='underline'>Your Order</h3>" + newPizza.size + " pie with " + newPizza.toppings.join(", ");
+    }
 
     $("#complete").html(output);
   });
