@@ -69,15 +69,13 @@ $(function() {
   $("form#pie").submit(function(event) {
     event.preventDefault();
 
-    $('input[name=size]:checked').val('unchecked');
-    $("button").hide();
-
     var output = "";
 
     if(newPizza.toppings.length < 1) {
       output = "<p>Please add topping(s)</p>";
     } else if (typeof newPizza.size != 'undefined') {
       output = "<h3 class='order-head'>Your Order</h3>" + "<span class='order'>" + newPizza.size + " pie with " + newPizza.toppings.join(", ") + "</span>";
+      $("button").hide();
     }
 
     $("#complete").html(output);
