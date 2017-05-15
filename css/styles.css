@@ -62,23 +62,19 @@ h1, #sub-header {
   margin: 40px;
 }
 
-.toppings {
-  display: none;
-}
-
 img.sm, img.md, img.lg {
-  width: 100px;
+  width: 75px;
   height: auto;
   display: block;
   margin: auto;
 }
 
 img.md {
-  width: 150px;
+  width: 100px;
 }
 
 img.lg {
-  width: 200px;
+  width: 150px;
 }
 
 .icon {
