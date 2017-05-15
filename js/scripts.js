@@ -13,6 +13,7 @@ function Pizza(size, toppings) {
   this.size = size;
   this.toppings = [];
   this.total = 0;
+  this.perTopping = 0;
 }
 
 //method that adds price of size to total, returns total
@@ -34,8 +35,16 @@ Pizza.prototype.pushTopping = function(topping) {
 
 //method that adds price of topping chosen to total, returns total
 Pizza.prototype.addToppings = function() {
+  if (this.size === "sm") {
+    this.perTopping = 1;
+  } else if (this.size === "md") {
+    this.perTopping = 2;
+  } else if (this.size === "lg") {
+    this.perTopping = 3;
+  }
+
   for (i = 0; i < this.toppings.length; i++) {
-  this.total += 2;
+    this.total += this.perTopping;
   }
   return this.total;
 }
@@ -58,5 +67,6 @@ $(function() {
     newPizza.addToppings();
 
     $("#total").text(newPizza.total);
+    $("#topping-price").text("$" + newPizza.perTopping + " each");
   });
 });
