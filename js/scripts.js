@@ -19,11 +19,11 @@ function Pizza(size, toppings) {
 //method that adds price of size to total, returns total
 Pizza.prototype.addSize = function() {
   if (this.size === "small") {
-    this.total += 12;
+    this.total += 10;
   } else if (this.size === "medium") {
-    this.total += 15;
+    this.total += 13;
   } else if (this.size === "large") {
-    this.total += 18;
+    this.total += 16;
   }
   return this.total;
 }
