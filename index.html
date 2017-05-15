@@ -26,9 +26,9 @@
               <label for="lg" class="icon"><img src="img/pizza.png" alt="pizza icon" class="lg"></label>
             </div>
           </div>
-          <div class="col-md-3 col-md-offset-1">
-            <div class="form-group">
-              <label for="tops"><span id="topping-price"></span></label>
+          <div class="col-md-3 col-md-offset-1" id="order-summary">
+            <div class="form-group topping-group">
+              <label for="tops"><span id="topping-price">&nbsp;</span></label>
               <div class="checkbox">
                 <label><input type="checkbox" value="sauce">family recipe tomato sauce</label>
               </div>
@@ -65,12 +65,14 @@
             </div>
           </div><!-- end 2nd col -->
           <div class="col-md-3 col-md-offset-1">
+            <div id="total-section">
+              <h3>Total: $<span id="total"></span></h3>
+              <span id="complete"></span>
+            </div>
             <div class="form-group">
               <button type="submit" class="btn btn-default">Place Order</button>
             </div>
-            <div>
-              <h3>Total: $<span id="total"></span></h4>
-            </div>
+
           </div>
         </form>
       </div>
