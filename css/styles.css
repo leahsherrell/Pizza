@@ -55,7 +55,7 @@ h1, #sub-header {
 }
 
 .container {
-  font-family: 'bodoniflfregular';
+  font-family: 'bodoniflfbold';
 }
 
 #button {
@@ -89,4 +89,14 @@ img.lg {
 
 .radio-button:checked+label {
   opacity: 1;
+}
+
+.topping-group {
+  font-size: 16px;
+  letter-spacing: .5px;
+}
+
+#topping-price {
+  font-size: 18px;
+  text-align: center;
 }
